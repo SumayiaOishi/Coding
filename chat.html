@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="new11">
+<button id="newAdd">add</button>
+<ul class="add"></ul>
+
+<script>
+    var newButton = document.getElementById("newAdd");
+
+    newButton.addEventListener("click", function () {
+        let addOne = document.getElementById("new11").value.trim();
+
+        if (addOne !== '') {
+            let newItem = document.createElement("li");
+            newItem.textContent = addOne;
+
+            // Append the new item to the unordered list
+            document.querySelector(".add").appendChild(newItem);
+
+            // Clear the input field after adding the item
+            document.getElementById("new11").value = '';
+        }
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo</title>
+</head>
+<body>
+    <h2>JavaScript in Body</h2>
+    <p id="demo">Hello World</p>
+    <button id="new" onclick="myFunction()">Hello</button> <br> <br>
+
+
+
+    <input type="number" id="in1" > + <input type="number" id="in2"  > = <input type="text" id="in3">
+     <button id="myButton">Sum</button> <br> <br>
+     
+
+     <input type="text" id="new11"> <button id="newAdd">add</button>
+     <ul id="add"></ul>
+
+
+    <script>
+        function myFunction(){
+            document.getElementById("demo").style.color="blue";
+        }
+
+        var button = document.getElementById("myButton");
+        button.addEventListener("click", function(){
+            let sum1=document.getElementById("in1").value;
+            let sum2= document.getElementById("in2").value;
+            if(!isNaN(sum1) && !isNaN(sum2)){
+                let result= parseInt(sum1)+ parseInt(sum2);
+                document.getElementById("in3").value=result;
+            }
+            else{
+                document.getElementById("in3").textContent="error";
+            }
+            
+        });
+
+
+
+
+
+        var newButton = document.getElementById("newAdd");
+        newButton.addEventListener("click", function(){
+               
+            
+                let addOne = document.getElementById("new11").value.trim();
+                
+                 
+                if(addOne !== ''){
+                     let newItem = document.createElement("li");
+                     newItem.textContent=addOne;
+                     document.getElementById("add").appendChild(newItem);
+                    
+
+                     
+                }
+ 
+            
+           
+        });
+
+
+
+
+        
+      
+        
+    </script>
+    
+</body>
+</html>
