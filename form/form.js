@@ -10,16 +10,23 @@
 
 // form.js
 let button = document.querySelector('.js-button').addEventListener('click', function () {
-  let inputs = document.querySelectorAll('.js-input');
-  let paragraphs = document.querySelectorAll('.demo');
+  let input = document.querySelectorAll('.js-input');
+  let para = document.querySelectorAll('.demo');
 
-  for (let i = 0; i < inputs.length; i++) {
-    if (inputs[i].value === '') {
-      paragraphs[i].innerHTML = "Fill up";
+  for (let i = 0; i < input.length; i++) {
+    if (input[i].value === '') {
+      para[i].innerHTML = "Please fill up this field";
     } else {
-      paragraphs[i].innerHTML = ""; // Clear previous messages if any
+      para[i].innerHTML = ""; 
     }
+    
   }
+  let formData='';
+  input.forEach(inputs=>{
+    formData += `<P>${inputs.placeholder}:${inputs.value}</P>`
+  });
+  document.getElementById('form-data').innerHTML=formData;
+  
 });
 
 
