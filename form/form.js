@@ -12,6 +12,7 @@
 let button = document.querySelector('.js-button').addEventListener('click', function () {
   let input = document.querySelectorAll('.js-input');
   let para = document.querySelectorAll('.demo');
+  let passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).{8,}$/;
 
   for (let i = 0; i < input.length; i++) {
     if (input[i].value === '') {
@@ -19,13 +20,21 @@ let button = document.querySelector('.js-button').addEventListener('click', func
     } else {
       para[i].innerHTML = ""; 
     }
-    
   }
+
+  let password = document.querySelector('input[type="password"]').value;
+  if (!passwordRegex.test(password)) {
+    para[input.length - 1].innerHTML = "Password must be at least 8 characters";
+  } else {
+    para[input.length - 1].innerHTML = ""; 
+  }
+
   let formData='';
   input.forEach(inputs=>{
     formData += `<P>${inputs.placeholder}:${inputs.value}</P>`
   });
   document.getElementById('form-data').innerHTML=formData;
+  
   
 });
 
