@@ -2,6 +2,9 @@
   margin: 0;
   padding: 0;
 } */
+/* body{
+ background-color:  rgb(66, 124, 124);
+} */
 .main{
   display: flex;
  align-items: center;
@@ -46,7 +49,7 @@ button{
 
 p{
 color: rgb(255, 255, 255);
-margin-top: -3px;
+margin-top: 5px;
 }
 #form-data{
  margin-top: 20px;
