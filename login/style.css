@@ -1,5 +1,5 @@
 body{
-    background-color:rgb(24, 42, 86);
+    /* background-color:rgb(24, 42, 86); */
 }
 h3{
     position: absolute;
@@ -17,10 +17,11 @@ h3{
     width: 600px;
     height: 500px;
     margin-left: 500px;
-    background-color: white;
+    background-color: rgb(43, 131, 27);
     position: relative;
   
 }
+
 img{
     width: 350px;
     height: 500px;

@@ -7,27 +7,21 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  
-
     <div class="main1">
         <div class="main2">
-            <h3>Welcome To The Login Page</h3>
+            <h3>Welcome</h3>
             <img src="download.jpeg" alt="">
         </div>
-
         <div class="main3">
-         <p>Email</p>
-            <input type="text"  id="input1"> <br>
-             <p>Password</p>
-            <input type="password" id="input2">
+            <p>Email</p>
+            <input type="email" id="input1" class="js-input">
+            <p class="error" id="emailError"></p>
+            <p>Password</p>
+            <input type="password" id="input2" class="js-input" >
+            <p class="error" id="passwordError"></p>
+            <button type="submit" id="button1">Login</button>
         </div>
-
     </div>
-
- 
-
-   
-    
+    <script src="script.js"></script>
 </body>
 </html>
