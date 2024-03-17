@@ -23,11 +23,14 @@ function rendertodolist(){
       list.forEach((todo,index)=>{
 
         const html=`
-        <input type="checkbox" class="checked">
-        <div>${todo.name} </div>
-           <div>  ${todo.duedate}</div>
+        <div class="toDo ">
         
-        <button  class="del   js-del">Delete</button> 
+        <input type="checkbox" class="checked">
+        <div class="todo-name">${todo.name}</div>
+        <div class="todo-date">${todo.duedate}</div>
+        <button class="del js-del"  >Delete</button>
+
+  </div>
    
          `;
         result +=html;
@@ -43,20 +46,25 @@ function rendertodolist(){
         });
       });
 
-      document.querySelectorAll('.checked').forEach((checking, index) => {
-        checking.addEventListener('click', () => {
-            // Get the corresponding list item
-            const listItem = checking.parentElement;
-    
-            // Toggle line-through style on the todo name
-            const todoName = listItem.querySelector('div:nth-of-type(1)');
-            todoName.style.textDecoration = checking.checked ? 'line-through' : 'none';
-    
-            // Toggle line-through style on the date
-            const todoDate = listItem.querySelector('div:nth-of-type(2)');
-            todoDate.style.textDecoration = checking.checked ? 'line-through' : 'none';
-        });
-    });
+   
+
+    document.querySelectorAll('.checked').forEach((checking, index) => {
+      checking.addEventListener('click', () => {
+          // Get the corresponding todo item
+          const todoItem = checking.closest('.toDo');
+
+          // Toggle line-through style on the todo name
+          const todoName = todoItem.querySelector('.todo-name');
+          todoName.style.textDecoration = checking.checked ? 'line-through' : 'none';
+
+          // Toggle line-through style on the date
+          const todoDate = todoItem.querySelector('.todo-date');
+          todoDate.style.textDecoration = checking.checked ? 'line-through' : 'none';
+          
+      });
+      
+  });
+  
     
     
 
@@ -77,13 +85,20 @@ function add(){
  const dataInput =document.querySelector('.js-date-input');
 
  const ne =dataInput.value;
-
- list.push({
-  name:name, 
+if(name!==" "){
+ 
   
-  duedate:ne,
-   
-});
+  
+  list.push({
+    name:name,  
+    duedate:ne,
+     
+  });
+} 
+else{
+  document.getElementById('k').placeholder="Todo-name";
+}
+
 
 //  console.log(list);
  inEle.value= ' ' ;
@@ -134,6 +149,20 @@ document.querySelectorAll('.js-del').forEach((delBut,index)=>{
 
 
 });*/
+ //   document.querySelectorAll('.checked').forEach((checking, index) => {
+    //     checking.addEventListener('click', () => {
+    //         // Get the corresponding list item
+    //         const listItem = checking.parentElement;
+    
+    //         // Toggle line-through style on the todo name
+    //         const todoName = listItem.querySelector('div:nth-of-type(1)');
+    //         todoName.style.textDecoration = checking.checked ? 'line-through' : 'none';
+    
+    //         // Toggle line-through style on the date
+    //         const todoDate = listItem.querySelector('div:nth-of-type(2)');
+    //         todoDate.style.textDecoration = checking.checked ? 'line-through' : 'none';
+    //     });
+    // });
 
 
 

@@ -34,6 +34,6 @@ document.getElementById('button1').addEventListener('click', function() {
 
   if (emailError.textContent === '' && passwordError.textContent === '') {
     
-    document.location.href = 'home.html'; 
+    document.location.href = 'todo/todo.html'; 
 }
 });
